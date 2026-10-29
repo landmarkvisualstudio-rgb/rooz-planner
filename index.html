@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101816">
+<meta name="description" content="هر روز، یک قدم جلوتر. مدیریت کارهای شخصی با تقویم فارسی.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="روز">
+<title>روز — فضای شخصی من</title>
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<script>
+// apply saved theme before paint; capture install prompt before React mounts
+try{var t=localStorage.getItem('rooz-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+(function(){if(window.__roozPWA)return;var s=window.__roozPWA={prompt:null,installed:false};
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();s.prompt=e;dispatchEvent(new Event('rooz:pwa-change'))});
+addEventListener('appinstalled',function(){s.prompt=null;s.installed=true;dispatchEvent(new Event('rooz:pwa-change'))})})();
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="./src/main.tsx"></script>
+</body>
+</html>
